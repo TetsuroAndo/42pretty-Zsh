@@ -1,0 +1,17 @@
+shell = "zsh"
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+# 補完
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+# シンタックスハイライト
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
+
+# バージョン管理システム連携
+[plugins.zsh-git-prompt]
+github = "woefe/git-prompt.zsh"
+use = ["git-prompt.plugin.zsh"]

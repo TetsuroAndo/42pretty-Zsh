@@ -1,0 +1,4 @@
+.DS_Store
+*.zwc
+zsh_history
+.zsh_sessions
