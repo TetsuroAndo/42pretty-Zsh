@@ -1,5 +1,5 @@
 # Git
-export GIT_CONFIG_GLOBAL=$HOME/src/mac-dotfiles/git/.gitconfig
+export GIT_CONFIG_GLOBAL=$HOME/.gitconfig
 
 #PROMPT=$'
 #%F{201}%n@%m%f \U1F4C2 %F{039}%~%f | %F{046}%D %*%f
