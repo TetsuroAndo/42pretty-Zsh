@@ -15,3 +15,11 @@ github = "zdharma-continuum/fast-syntax-highlighting"
 [plugins.zsh-git-prompt]
 github = "woefe/git-prompt.zsh"
 use = ["git-prompt.plugin.zsh"]
+
+# 自動展開略語
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
+
+# ディレクトリジャンプ
+[plugins.zsh-z]
+github = "agkozak/zsh-z"

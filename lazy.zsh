@@ -1,15 +1,16 @@
-# # バージョン管理
-# eval "$(~/.local/bin/mise activate zsh)"
-# export PATH="$HOME/.local/share/mise/shims:$PATH"
-
-# some more ls aliases
+### some more aliases
 alias c=clear
 alias ls='ls --color=auto'
-alias autopush='git pull && git add . && git commit -m "`date`" && git push'
 alias ll='ls -CFl'
 alias la='ls -CFA'
 alias l='ls -CF'
 alias lla='ls -CFlA'
+
+# git
+alias autopush='git pull && git add . && git commit -m "Auto commit to $(date '+%Y-%m-%d %H:%M:%S')" && git push'
+alias push='git push'
+alias apush='git add . && git commit -m "Auto commit to $(date '+%Y-%m-%d %H:%M:%S')" && git push'
+alias pul=git pull
 
 # nvim aliase
 alias nv='nvim'
@@ -20,15 +21,13 @@ alias ccx=$HOME/src/cc-alias-script/compile_run.sh
 alias cx=$HOME/src/cc-alias-script/compile_run_w3.sh
 
 # 42 norm Check
-alias nrc='norminette -R CheckForbiddenSourceHeader'
 alias norm='norminette -R CheckForbiddenSourceHeader'
+alias normd='norminette -R CheckDefine'
 
-# # ls=eza
-# alias ls='eza'
-# alias ll='eza -l'
-# alias la='eza -a'
-# alias lla='eza -la'
-# alias l='eza --classify'
+# Memory Check
+alias valgrind-leak='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
+alias valgrind-mem='valgrind --tool=memcheck --leak-check=full --show-reachable=yes --num-callers=20 --track-fds=yes'
+
 # # tools
 # alias cat='bat'
 # alias grep='rg'
@@ -39,27 +38,14 @@ alias norm='norminette -R CheckForbiddenSourceHeader'
 
 ### PATH 
 # Rust cargo
-/home/teando/.cargo/env
-
-# pnpm
-export PNPM_HOME="/Users/atomboy/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+$HOME/.cargo/env
 
 ### Tools
-
-# # the fuck
-# eval $(thefuck --alias)
-# # fzf
-# source <(fzf --zsh)
-# tre
+#tre
 tre() { command tre "$@" -e vim && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
 
 
-### キーバインド
+### key binding
 bindkey ';5C' end-of-line                     # ctrl + ->
 bindkey ';5D' beginning-of-line               # ctrl + <-
 bindkey ';3C' forward-word                    # alt + ->
@@ -68,7 +54,6 @@ bindkey ';9A' beginning-of-buffer-or-history    # page up
 bindkey ';9B' end-of-buffer-or-history          # page down
 bindkey ';2C' forward-char                    # ctrl + ->
 bindkey ';2D' backward-char                   # ctrl + <-
-
 
 ### 保管機能
 autoload -Uz compinit
