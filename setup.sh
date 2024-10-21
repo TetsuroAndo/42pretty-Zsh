@@ -1,10 +1,8 @@
-
-# ユーザーのフォントディレクトリを作成
-mkdir -p $HOME/.local/share/fonts/truetype/hack
-# Hackフォントをダウンロードしてインストール
-wget -O $HOME/.local/share/fonts/truetype/hack/Hack.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
-unzip $HOME/.local/share/fonts/truetype/hack/Hack.zip -d $HOME/.local/share/fonts/truetype/hack
-rm $HOME/.local/share/fonts/truetype/hack/Hack.zip
+# Hackフォントをインストール
+mkdir -p $HOME/.local/share/fonts/NerdFonts
+wget -O $HOME/.local/share/fonts/NerdFonts/Hack.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
+unzip $HOME/.local/share/fonts/NerdFonts/Hack.zip -d $HOME/.local/share/fonts/NerdFonts
+rm $HOME/.local/share/fonts/NerdFonts/Hack.zip
 # フォントキャッシュを更新
 fc-cache -fv
 # ユーザーの.zshrcにTERM環境変数を設定
