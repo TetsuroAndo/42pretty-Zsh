@@ -11,13 +11,24 @@ alias la='ls -CFA'
 alias l='ls -CF'
 alias lla='ls -CFlA'
 
+alias pull='git pull'
+# clip
+alias clip='xsel --clipboard --input'
+alias pbcopy='xsel --clipboard --input'
+
 # nvim aliase
 alias nv='nvim'
 
-# clang comp
+# my tree command
+alias tree='python3 $HOME/src/my-tree-command/tree.py'
+
+# clang compile
 alias ccw='gcc -Wall -Wextra -Werror'
 alias ccx=$HOME/src/cc-alias-script/compile_run.sh
 alias cx=$HOME/src/cc-alias-script/compile_run_w3.sh
+
+# debag
+alias memc='valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all'
 
 # 42 norm Check
 alias nrc='norminette -R CheckForbiddenSourceHeader'
