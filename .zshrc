@@ -1,0 +1,1 @@
+/home/teando/.config/zsh/dotfiles/.zshrc

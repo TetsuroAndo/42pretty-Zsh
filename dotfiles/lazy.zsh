@@ -12,6 +12,9 @@ alias push='git push'
 alias apush='git add . && git commit -m "Auto commit to $(date '+%Y-%m-%d %H:%M:%S')" && git push'
 alias pul=git pull
 
+# tree script
+alias tree='python3 $HOME/src/my-tree-command/tree.py'
+
 # nvim aliase
 alias nv='nvim'
 
@@ -28,6 +31,13 @@ alias normd='norminette -R CheckDefine'
 alias valgrind-leak='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
 alias valgrind-mem='valgrind --tool=memcheck --leak-check=full --show-reachable=yes --num-callers=20 --track-fds=yes'
 
+# Alacritty 42Ubuntu
+alias alacritty='nohup alacritty >/dev/null 2>&1 &'
+alias a='setsid alacritty </dev/null &>/dev/null &'
+
+# code
+alias code=/usr/share/code/bin/code
+
 # # tools
 # alias cat='bat'
 # alias grep='rg'
@@ -37,6 +47,8 @@ alias valgrind-mem='valgrind --tool=memcheck --leak-check=full --show-reachable=
 # alias diff='delta'
 
 ### PATH 
+export PATH=$HOME/.local/bin:$PATH
+
 # Rust cargo
 $HOME/.cargo/env
 

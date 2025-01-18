@@ -6,5 +6,5 @@ export GIT_CONFIG_GLOBAL=$HOME/.gitconfig
 #%F{099}\U276F%f '
 
 # Starship
-export STARSHIP_CONFIG=$HOME/.config/zsh/starship.toml
+export STARSHIP_CONFIG=$HOME/.config/zsh/dotfiles/starship.toml
 eval "$(starship init zsh)"

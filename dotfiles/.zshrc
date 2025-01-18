@@ -56,3 +56,9 @@ setopt nonomatch           # パターンに一致するものがない場合の
 setopt notify              # バックグラウンドジョブの状態を即座に報告します
 setopt numericglobsort     # 論理的な場合にファイル名を数値でソートします
 setopt promptsubst         # プロンプトでのコマンド置換を有効にします
+
+# Load Homebrew config script
+source $HOME/.brewconfig.zsh
+
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
