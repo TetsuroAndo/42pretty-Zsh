@@ -35,7 +35,8 @@ if [ ! -f /home/$USER/.config/zsh/lazy.zsh ]; then
         rm -rf "$TARGET_DIR"
     fi
 
-    mv .[!.]* ./* $TARGET_DIR 2>/dev/null || true
+    mkdir -p "$TARGET_DIR"
+    mv .[!.]* ./* $TARGET_DIR
 
     ln -s "$TARGET_DIR/zshrc" "/home/$USER/.zshrc"
 else
