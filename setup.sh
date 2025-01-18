@@ -28,20 +28,16 @@ if [ ! -f /home/$USER/.config/zsh/lazy.zsh ]; then
     if [ -f /home/$USER/.zshrc ]; then
         mv /home/$USER/.zshrc /home/$USER/.zshrc.backup
     fi
-    
-    # 既存のディレクトリがある場合は削除
+    if [ -L "/home/$USER/.zshrc" ] || [ -f "/home/$USER/.zshrc" ]; then
+        rm "/home/$USER/.zshrc"
+    fi
     if [ -d "$TARGET_DIR" ]; then
         rm -rf "$TARGET_DIR"
     fi
 
-    mv ./dotfiles $TARGET_DIR
+    mv .[!.]* ./* $TARGET_DIR 2>/dev/null || true
 
-    # 既存のシンボリックリンクがある場合は削除
-    if [ -L "/home/$USER/.zshrc" ] || [ -f "/home/$USER/.zshrc" ]; then
-        rm "/home/$USER/.zshrc"
-    fi
-
-    ln -s "$TARGET_DIR/.zshrc" "/home/$USER/.zshrc"
+    ln -s "$TARGET_DIR/zshrc" "/home/$USER/.zshrc"
 else
     echo '42pretty-Zsh Already installed'
 fi
